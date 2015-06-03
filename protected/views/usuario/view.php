@@ -37,7 +37,7 @@ $this->menu=array(
 				<?php if($data->type==1) echo"Tarea";?>
 				<?php if($data->type==2) echo"Operacion";?>
 			</small>
-			<?php echo CHtml::link($enabled?"Off":"On",array("usuario/assign","id"=>$model->id,"item"=>$data->name),
+			<?php echo CHtml::link($enabled?"Denegar Rol":"Asignar Rol",array("usuario/assign","id"=>$model->id,"item"=>$data->name),
 								array("class"=>$enabled?"btn btn-primary":"btn"));?>
 		</h4>
 		<p><?php echo $data->description?></p>
@@ -45,3 +45,19 @@ $this->menu=array(
 <?php endforeach;?>	
 </ul>
 
+<div class="row-fluid">
+    <div class="span6">
+        <?php $form=$this->beginWidget("CActiveForm");?>
+
+        <?php echo $form->labelEx($role,"name");?>
+        <?php echo $form->textField($role,"name");?>
+        <?php echo $form->error($role,"name");?><br>
+
+        <?php echo $form->labelEx($role,"description");?>
+        <?php echo $form->textArea($role,"description");?><br>
+        <?php echo $form->error($role,"description");?>
+
+        <?php echo CHtml::submitButton("Create",array("class"=>"btn btn-primary")); ?>
+        <?php $this->endWidget(); ?>
+    </div>
+</div>
