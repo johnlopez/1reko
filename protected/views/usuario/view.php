@@ -44,3 +44,4 @@ $this->menu=array(
 	</li>  
 <?php endforeach;?>	
 </ul>
+
