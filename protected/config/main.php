@@ -35,7 +35,9 @@ return array(
 		'authManager'=>array(
 			"class"=>"CDbAuthManager",
 			"connectionID"=>"db",
-			
+			'itemTable'=>'rol_institucion', // Tabla que contiene los elementos de autorizacion rol_institucion
+        	'itemChildTable'=>'AuthItemChild', // Tabla que contiene los elementos padre-hijo
+        	'assignmentTable'=>'usuario_has_rol_institucion', // Tabla que contiene la signacion usuario-autorizacion usuario_has_rol_institucion
 		),
 
 		'user'=>array(
